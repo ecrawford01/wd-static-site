@@ -1,6 +1,9 @@
+/* CSS File */
+
+@import url(https://fonts.googleapis.com/css?family=Righteous);
 * {
   background-color: #f9f4f5;
-  font-family: 'Dekko';
+  font-family: "Dekko";
 }
 html {
   height: 100%;
@@ -12,6 +15,21 @@ img {
   object-fit: scale-down;
 }
 
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .nav-icon {
+    visibility: hidden;
+  }
+  .navigation h1 {
+    visibility: hidden;
+  }
+  .navigation nav {
+    float: left;
+    flex-direction: column;
+    justify-content: left;
+  }
+}
+/* navigation */
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -28,10 +46,37 @@ img {
 .navigation > nav {
   display: flex;
 }
+nav {
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 60%;
+  font-size: xx-large;
+}
+nav > a {
+  text-decoration: none;
+}
+nav a:link {
+  color: #60a561;
+}
+nav a:visited {
+  color: #60a561;
+}
+nav a:hover {
+  color: #c42847;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  text-shadow: 0.03em 0.03em 0 #c42847;
+  -webkit-transition: color 1s; /* For Safari 3.0 to 6.0 */
+  transition: color 1s; /* For modern browsers */
+}
+
 body {
   min-height: 100%;
   margin: 0px;
-  background-color: #60a561;
+  background-color: #f9f4f5;
   height: 100%;
   width: 100%;
   bottom: 0;
@@ -42,31 +87,10 @@ h1 {
 h2 {
   color: #c42847;
 }
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px;
-  width: 60%;
-  font-size: xx-large;
-}
 p {
   font-size: x-large;
 }
-nav > a {
-  text-decoration: none;
-}
-a:link {
-  color: #c42847;
-}
-nav a.hover {
-  color: #c42847;
-}
-a:visited {
-  color: #60a561;
-}
-nav:hover {
-  color: #c42847;
-}
+
 ul {
   list-style-position: inside;
   font-size: x-large;
@@ -76,8 +100,18 @@ ol {
   font-size: x-large;
 }
 .container {
+  top: 0;
   min-height: 80%;
   width: 75%;
   margin: auto;
   text-align: center;
+}
+
+@keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
 }
